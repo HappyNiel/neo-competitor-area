@@ -1,5 +1,7 @@
 # NEO Competitor Area
-Niel Hekkens
+By Niel Hekkens
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/d535884df70fe2d32c2f/maintainability)](https://codeclimate.com/github/HappyNiel/neo-competitor-area/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d535884df70fe2d32c2f/test_coverage)](https://codeclimate.com/github/HappyNiel/neo-competitor-area/test_coverage)
 
 The NEO Competitor Area is the team management system for the NEO Endurance Series league. With this platform team are able to register their team and entries. The organisation can manage the grid and teams.
 
