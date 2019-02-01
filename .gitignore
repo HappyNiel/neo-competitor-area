@@ -40,7 +40,9 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+.nyc_output/
 
 # System Files
 .DS_Store
 Thumbs.db
+package-lock.json
