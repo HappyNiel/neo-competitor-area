@@ -1,6 +1,7 @@
 {
-	"name": "NEO Competitor Area",
+	"name": "neo-competitor-area",
 	"version": "0.1.0",
+	"author": "Niel Hekkens",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
