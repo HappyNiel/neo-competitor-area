@@ -22,6 +22,19 @@
 		"ordered-imports": false,
 		"object-literal-sort-keys": false,
 		"no-consecutive-blank-lines": false,
-		"trailing-comma": false
+		"trailing-comma": false,
+		"no-console": [
+			true,
+			"debug",
+			"info",
+			"time",
+			"timeEnd",
+			"trace"
+		],
+		"one-line": [
+			true,
+			"check-open-brace",
+			"check-whitespace"
+		]
 	}
 }
