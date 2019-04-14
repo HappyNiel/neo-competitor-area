@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/home/Home.vue";
+import PageNotFound from "./views/errors/PageNotFound.vue";
+import NoAccess from "./views/errors/PageNoAccess.vue";
 import Login from "./views/login/Login.vue";
 import Register from "./views/register/Register.vue";
 import firebase from "firebase/app";
@@ -11,7 +13,7 @@ const router = new Router({
 	routes: [
 		{
 			path: "*",
-			redirect: "/login"
+			redirect: "/page-not-found"
 		},
 		{
 			path: "/",
@@ -35,6 +37,16 @@ const router = new Router({
 				requiresAuth: true
 			}
 		},
+		{
+			path: "/page-not-found",
+			name: "pagenotfound",
+			component: PageNotFound,
+		},
+		{
+			path: "/no-access",
+			name: "noaccess",
+			component: NoAccess,
+		},
 		// {
 		// 	path: "/about",
 		// 	name: "about",
@@ -50,12 +62,16 @@ router.beforeEach((to, from, next) => {
 	const currentUser = firebase.auth().currentUser;
 	const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
+	// If the page requires autherntication, but user is not logged in.
 	if (requiresAuth && !currentUser) {
-		next("login");
+		next("no-access");
 	}
-	else if (!requiresAuth && currentUser) {
-		next("home");
-	}
+
+	// If the user is logged in, send him to home
+	// else if (!requiresAuth && currentUser) {
+	// 	next("home");
+	// }
+
 	else {
 		next();
 	}
