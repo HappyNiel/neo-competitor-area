@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/home/Home.vue";
-import PageNotFound from "./views/errors/PageNotFound.vue";
-import NoAccess from "./views/errors/PageNoAccess.vue";
-import Login from "./views/login/Login.vue";
-import Register from "./views/register/Register.vue";
+import NotFoundView from "./views/errors/NotFoundView.vue";
+import NoAccessView from "./views/errors/NoAccessView.vue";
+import LoginView from "./views/login/LoginView.vue";
 import firebase from "firebase/app";
+import RegisterView from "./views/register/RegisterView";
+import HomeView from "./views/home/HomeView";
 
 Vue.use(Router);
 
@@ -22,17 +22,17 @@ const router = new Router({
 		{
 			path: "/login",
 			name: "login",
-			component: Login,
+			component: LoginView,
 		},
 		{
 			path: "/register",
 			name: "register",
-			component: Register,
+			component: RegisterView,
 		},
 		{
 			path: "/home",
 			name: "home",
-			component: Home,
+			component: HomeView,
 			meta: {
 				requiresAuth: true
 			}
@@ -40,12 +40,12 @@ const router = new Router({
 		{
 			path: "/page-not-found",
 			name: "pagenotfound",
-			component: PageNotFound,
+			component: NotFoundView,
 		},
 		{
 			path: "/no-access",
 			name: "noaccess",
-			component: NoAccess,
+			component: NoAccessView,
 		},
 		// {
 		// 	path: "/about",

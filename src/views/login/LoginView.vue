@@ -10,4 +10,4 @@
 	</div>
 </template>
 
-<script lang="ts" src="./Login.ts"></script>
+<script lang="ts" src="./LoginView.ts"></script>

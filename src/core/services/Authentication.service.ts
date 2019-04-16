@@ -10,6 +10,7 @@ export class AuthService {
 				return router.replace("home");
 			},
 			(error) => {
+				// TODO: replace this with proper error handling
 				return alert(error.message);
 			});
 	}
@@ -21,6 +22,7 @@ export class AuthService {
 				return router.replace("home");
 			},
 			(error) => {
+				// TODO: replace this with proper error handling
 				return alert(error.message);
 			});
 	}
@@ -33,11 +35,19 @@ export class AuthService {
 	}
 
 	// Reset password
-	public resetPassword(email: string) {
-		return null;
+	public resetPassword(email: string): Promise<void> {
+		return firebase.auth().sendPasswordResetEmail(email)
+			.then(() => {
+				// TODO: replace this with proper user flow.
+				alert("A password reset link has been sent to your email address.");
+			},
+			(error) => {
+				// TODO: replace this with proper error handling
+				return alert(error.message);
+			});
 	}
 
 	// Set userdata to Firestore after successful login/registration
 }
 
-export const authService = new AuthService();
+export default new AuthService();

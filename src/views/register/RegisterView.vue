@@ -10,4 +10,4 @@
 	</div>
 </template>
 
-<script lang="ts" src="./Register.ts"></script>
+<script lang="ts" src="./RegisterView.ts"></script>

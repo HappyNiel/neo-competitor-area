@@ -1,6 +1,6 @@
 <template>
 	<div class="NoAccessView">
-		<h1>You have no access.</h1>
+		<h1>This is not the page you are looking for.</h1>
 		<p>Go back to where you came from.</p>
 	</div>
 </template>
@@ -9,7 +9,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class NoAccess extends Vue {
+export default class NotFoundView extends Vue {
 
 }
 </script>
