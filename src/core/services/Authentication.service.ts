@@ -1,7 +1,8 @@
-import firebase from "firebase/app";
+import firebase, { User } from "firebase/app";
 import router from "@/router";
 
 export class AuthService {
+	// TODO: Unit test this file
 
 	// Register user
 	public registerNewUser(email: string, password: string) {
@@ -48,6 +49,17 @@ export class AuthService {
 	}
 
 	// Set userdata to Firestore after successful login/registration
+	public isUserLoggedIn(): boolean {
+		if (this.getCurrentUser()) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public getCurrentUser(): User | null {
+		return firebase.auth().currentUser;
+	}
 }
 
 export default new AuthService();

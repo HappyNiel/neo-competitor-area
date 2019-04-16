@@ -1,6 +1,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import AuthService from "@/core/services/Authentication.service";
+import { User } from "firebase";
 
 @Component({
 	components: {
@@ -8,8 +9,19 @@ import AuthService from "@/core/services/Authentication.service";
 	}
 })
 export default class HomeView extends Vue {
+	private currentUser: User | null = null;
 
 	public async onLogoutPressed(): Promise<void> {
 		await AuthService.logoutUser();
+	}
+
+	public beforeMount(): void {
+		this.currentUser = AuthService.getCurrentUser();
+	}
+
+	public mounted() {
+		if (this.currentUser !== null) {
+			console.log(this.currentUser.email);
+		}
 	}
 }
