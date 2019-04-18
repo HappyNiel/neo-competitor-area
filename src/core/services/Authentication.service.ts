@@ -1,5 +1,6 @@
 import firebase, { User } from "firebase/app";
 import router from "@/router";
+import store from "@/store";
 
 export class AuthService {
 	// TODO: Unit test this file
@@ -20,6 +21,7 @@ export class AuthService {
 	public async loginUser(email: string, password: string): Promise<void> {
 		return firebase.auth().signInWithEmailAndPassword(email, password)
 			.then((user) => {
+				store.commit("setCurrentUser", this.getCurrentUser());
 				return router.replace("home");
 			},
 			(error) => {

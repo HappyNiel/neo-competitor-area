@@ -2,6 +2,7 @@ import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import AuthService from "@/core/services/Authentication.service";
 import { User } from "firebase";
+import store from "@/store";
 
 @Component({
 	components: {
@@ -16,12 +17,13 @@ export default class HomeView extends Vue {
 	}
 
 	public beforeMount(): void {
-		this.currentUser = AuthService.getCurrentUser();
+		this.currentUser = store.state.currentUser;
 	}
 
 	public mounted() {
-		if (this.currentUser !== null) {
-			console.log(this.currentUser.email);
-		}
+		console.log(store.state.currentUser);
+		// if (this.currentUser !== null) {
+		// 	console.log(this.currentUser.email);
+		// }
 	}
 }

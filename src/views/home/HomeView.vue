@@ -2,7 +2,8 @@
 	<div class="home">
 		<button @click="onLogoutPressed()">Log out</button>
 		<img alt="Vue logo" src="../../assets/logo.png">
-		<HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+		
+		<h1>Hello {{ currentUser.email }}</h1>
 	</div>
 </template>
 
