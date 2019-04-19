@@ -1,8 +1,8 @@
 import { Component, Vue } from "vue-property-decorator";
+import store from "@/core/store";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import AuthService from "@/core/services/Authentication.service";
 import { User } from "firebase";
-import store from "@/store";
 
 @Component({
 	components: {

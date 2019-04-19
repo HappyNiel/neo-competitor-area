@@ -3,7 +3,7 @@ import App from "./App.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
 import router from "./router";
-import store from "./store";
+import store from "./core/store";
 import { firebaseKey } from "./firebase";
 import AuthService from "./core/services/Authentication.service";
 

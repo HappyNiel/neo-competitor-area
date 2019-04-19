@@ -1,6 +1,6 @@
 import firebase, { User } from "firebase/app";
 import router from "@/router";
-import store from "@/store";
+import store from "@/core/store";
 
 export class AuthService {
 	// TODO: Unit test this file
@@ -48,15 +48,6 @@ export class AuthService {
 				// TODO: replace this with proper error handling
 				return alert(error.message);
 			});
-	}
-
-	// Set userdata to Firestore after successful login/registration
-	public isUserLoggedIn(): boolean {
-		if (this.getCurrentUser()) {
-			return true;
-		}
-
-		return false;
 	}
 
 	public getCurrentUser(): User | null {
