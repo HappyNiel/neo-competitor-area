@@ -1,18 +1,32 @@
 import store from "@/core/store";
-import { Module, VuexModule, Mutation } from "vuex-module-decorators";
+import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
 import { User } from "firebase";
+import AuthService from "@/core/services/Authentication.service";
 
 @Module({
 	dynamic: true,
 	store,
 	name: "user"
-	
+	// namespaced: true,
 })
 export default class UserModule extends VuexModule {
-	public currentUser: User | null = null;
+	private currentUser: User | null = null;
+
+	public get email(): string {
+		if (this.currentUser !== null) {
+			return this.currentUser.email as string;
+		}
+
+		return "not logged in person.";
+	}
 
 	@Mutation
 	public setCurrentUser(user: User | null) {
 		this.currentUser = user;
+	}
+
+	@Action({ commit: "setCurrentUser"})
+	public async updateCurrentUserStatus(): Promise<User | null> {
+		return await AuthService.getCurrentUser();
 	}
 }
