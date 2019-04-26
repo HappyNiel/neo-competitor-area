@@ -21,6 +21,10 @@ body{
 h1{
 	font-weight: $Bold;
 	margin-bottom: 1.5rem;
+	
+	&.Hero{
+		font-size: 4rem;
+	}
 }
 
 h3{

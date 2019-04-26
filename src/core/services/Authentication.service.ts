@@ -8,7 +8,7 @@ export class AuthService {
 	public registerNewUser(email: string, password: string) {
 		return firebase.auth().createUserWithEmailAndPassword(email, password)
 			.then((user) => {
-				return router.replace("home");
+				return router.replace("dashboard");
 			},
 			(error) => {
 				// TODO: replace this with proper error handling
@@ -20,7 +20,7 @@ export class AuthService {
 	public async loginUser(email: string, password: string): Promise<void> {
 		return firebase.auth().signInWithEmailAndPassword(email, password)
 			.then((user) => {
-				return router.replace("home");
+				return router.replace("dashboard");
 			},
 			(error) => {
 				// TODO: replace this with proper error handling

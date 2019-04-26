@@ -6,4 +6,4 @@
 	</div>
 </template>
 
-<script lang="ts" src="./HomeView.ts"></script>
+<script lang="ts" src="./DashboardView.ts"></script>

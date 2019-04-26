@@ -8,7 +8,7 @@ import { User } from "firebase";
 		HelloWorld
 	}
 })
-export default class HomeView extends Vue {
+export default class DashboardView extends Vue {
 	private currentUser: User | null = null;
 
 	public async onLogoutPressed(): Promise<void> {
