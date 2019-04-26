@@ -1,8 +1,13 @@
 // Default font-family
 $OpenSans: 'Open Sans', Helvetica, Arial, sans-serif !default;
 
-// Font size
+// Reset font size
 $RootFontSize: 15px !default;
+
+// Font sizes
+$L: 1.2rem; // 18px
+$M: 1rem; // 15px
+$S: 0.8rem; // 12px
 
 // Font weight
 $Regular: 400 !default;
@@ -10,6 +15,7 @@ $Bold: 600 !default;
 
 // General colors
 $White: #FFFFFF !default;
+$LightGrey: #EDF2F4 !default;
 $Grey: #C4C9CC !default;
 $DarkGrey: #929699 !default;
 $Text: #313233 !default;

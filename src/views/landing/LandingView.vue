@@ -18,17 +18,11 @@
 
 <script lang="ts" src="./LandingView.ts"></script>
 <style lang="scss" scoped>
-@import '../../styles/main';
+@import '../../styles/abstracts/Variables';
 
 .HeroContainer{
-	width: 100%;
-	height: 30rem;
-	margin-bottom: 2rem;
+	
 	background: url('../../assets/hero-background.jpg') center;
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 
 	.IntroductionContainer{
 		color: $White;
@@ -43,4 +37,5 @@
 		}
 	}
 }
+
 </style>

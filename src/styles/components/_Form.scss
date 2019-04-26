@@ -1,0 +1,28 @@
+input[type=text], input[type=email],
+input[type=url], input[type=password],
+textarea{
+	padding: 0.5rem 1rem;
+	border: 1px solid $Grey;
+	border-radius: 5px;
+	font-size: $M;
+
+	&:focus{
+		border-color: $DarkGrey;
+	}
+}
+
+.Form{
+
+	section{
+		margin-bottom: 1rem;
+		display: block;
+		
+		label{
+			margin-left: 1rem;
+			margin-bottom: 0.3rem;
+			display: block;
+			font-size: $S;
+			color: $Text;
+		}
+	}
+}
