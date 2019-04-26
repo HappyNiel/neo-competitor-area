@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<button @click="onLoginButtonPressed">Login</button>
-		<p>Hello, {{ displayUserName() }}</p>
+	<div class="LoginComponent">
+		<button v-if="isUserLoggedIn()" @click="onLogoutButtonPressed">Logout, {{ displayUserName() }}</button>
+		<button v-else @click="onLoginButtonPressed">Login</button>
 	</div>
 </template>
 
@@ -9,13 +9,17 @@
 import store from "@/core/store";
 import { Component, Vue } from "vue-property-decorator";
 import router from "@/router";
+import UserModule from "../../core/store/modules/User.module";
+import { getModule } from "vuex-module-decorators";
+import AuthService from "../../core/services/Authentication.service";
+
+const userState = getModule(UserModule);
 
 @Component
 export default class LoginComponent extends Vue {
-	public userName: string = "";
 
-	public constructor() {
-		super();
+	public onLogoutButtonPressed(): void {
+		AuthService.logoutUser();
 	}
 
 	public onLoginButtonPressed(): void {
@@ -23,8 +27,11 @@ export default class LoginComponent extends Vue {
 	}
 
 	public displayUserName(): string {
-		console.log("displayUserName() is called");
-		return store.getters.email;
+		return userState.email;
+	}
+
+	public isUserLoggedIn(): boolean {
+		return userState.isLoggedIn;
 	}
 }
 </script>

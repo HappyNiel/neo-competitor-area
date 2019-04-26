@@ -12,6 +12,15 @@ import AuthService from "@/core/services/Authentication.service";
 export default class UserModule extends VuexModule {
 	private currentUser: User | null = null;
 
+	public get isLoggedIn(): boolean {
+		if (this.currentUser !== null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 	public get email(): string {
 		if (this.currentUser !== null) {
 			return this.currentUser.email as string;
