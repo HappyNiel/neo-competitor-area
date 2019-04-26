@@ -7,6 +7,7 @@
 		<button @click="onLoginClicked()">Log in</button>
 
 		<p>Don't have an account yet? <router-link to="/register">Create one</router-link>.</p>
+		Test push
 	</div>
 </template>
 
