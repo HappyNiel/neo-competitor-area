@@ -2,10 +2,12 @@
 	<header class="HeaderComponent">
 		<div class="Container HeaderContainer">
 			<div class="LogoContainer">
-				<img
-					class="Logo"
-					src="@/assets/neo-endurance-logo.png"
-					alt="NEO Endurance">
+				<router-link to="/">
+					<img
+						class="Logo"
+						src="@/assets/neo-endurance-logo.png"
+						alt="NEO Endurance">
+				</router-link>
 			</div>
 			<nav class="NavigationContainer">
 				<login-component></login-component>
