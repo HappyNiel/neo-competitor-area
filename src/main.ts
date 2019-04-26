@@ -1,14 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
+import store from "./core/store";
 import firebase from "firebase/app";
 import "firebase/auth";
 import router from "./router";
-import store from "./store";
 import { firebaseKey } from "./firebase";
-import AuthService from "./core/services/Authentication.service";
+import { getModule } from "vuex-module-decorators";
+import UserModule from "./core/store/modules/User.module";
 
 Vue.config.productionTip = false;
 firebase.initializeApp(firebaseKey);
+const userModule = getModule(UserModule);
 
 let app: any = null;
 const initializeApp = () => {
@@ -22,8 +24,8 @@ const initializeApp = () => {
 };
 
 firebase.auth().onAuthStateChanged(() => {
-	// Set the state of the user on load
-	store.commit("setCurrentUser", AuthService.getCurrentUser());
+	// Update the user in the store whenever the Auth state changes.
+	userModule.updateCurrentUserStatus();
 
 	initializeApp();
 });
