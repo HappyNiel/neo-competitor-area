@@ -1,6 +1,16 @@
 <template>
 	<header class="HeaderComponent">
-		<login-component></login-component>
+		<div class="Container HeaderContainer">
+			<div class="LogoContainer">
+				<img
+					class="Logo"
+					src="@/assets/neo-endurance-logo.png"
+					alt="NEO Endurance">
+			</div>
+			<nav class="NavigationContainer">
+				<login-component></login-component>
+			</nav>
+		</div>
 	</header>
 </template>
 
@@ -19,11 +29,5 @@ export default class TheHeader extends Vue {
 </script>
 
 
-<style lang="scss" scoped>
-	.HeaderComponent{
-		width: 100%;
-		height: 80px;
-		background-color: lightgray;
-	}
-</style>
+<style lang="scss" scoped src="./TheHeader.scss"></style>
 

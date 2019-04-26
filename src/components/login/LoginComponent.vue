@@ -1,7 +1,17 @@
 <template>
 	<div class="LoginComponent">
-		<button v-if="isUserLoggedIn()" @click="onLogoutButtonPressed">Logout, {{ displayUserName() }}</button>
-		<button v-else @click="onLoginButtonPressed">Login</button>
+		<button 
+			v-if="isUserLoggedIn()" 
+			@click="onLogoutButtonPressed"
+			class="Button Ghost">
+			Logout, {{ displayUserName() }}
+		</button>
+		<button 
+			v-else 
+			@click="onLoginButtonPressed"
+			class="Button Ghost">
+			Login
+		</button>
 	</div>
 </template>
 
