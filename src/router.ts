@@ -5,7 +5,7 @@ import NoAccessView from "./views/errors/NoAccessView.vue";
 import LoginView from "./views/login/LoginView.vue";
 import firebase from "firebase/app";
 import RegisterView from "./views/register/RegisterView";
-import HomeView from "./views/home/HomeView";
+import UserDashboard from "./views/dashboard/DashboardView";
 import LandingView from "./views/landing/LandingView";
 
 Vue.use(Router);
@@ -39,7 +39,7 @@ const router = new Router({
 		{
 			path: "/dashboard",
 			name: "dashboard",
-			component: HomeView,
+			component: UserDashboard,
 			meta: {
 				requiresAuth: true
 			}
