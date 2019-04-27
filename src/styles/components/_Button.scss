@@ -13,27 +13,27 @@
 	transition: all 0.15s linear;
 	box-sizing: border-box;
 
-	&:hover{
+	&:hover {
 		background-color: $SecondaryBlue;
 		border: 1px solid $SecondaryBlue;
 	}
 
-	&:disabled{
+	&:disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
 	}
 
-	&.Ghost{
+	&.Ghost {
 		background: $White;
 		color: $PrimaryBlue;
 		border: 1px solid $PrimaryBlue;
 
-		&:hover{
+		&:hover {
 			background-color: $PrimaryBlue;
 			color: $White;
 		}
 
-		&:active{
+		&:active {
 			background-color: $SecondaryBlue;
 		}
 	}	

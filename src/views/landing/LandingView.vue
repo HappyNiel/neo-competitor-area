@@ -2,8 +2,8 @@
 	<div class="LandingView">
 		<div class="HeroContainer">
 			<div class="IntroductionContainer">
-				<h1 class="Hero IntroductionTitle">NEO Endurance competitor area</h1>
-				<h2 class="IntroductionTagline">Welcome to the NES competitor area.</h2>
+				<h1 class="Hero IntroductionTitle">Welcome to the NEO competitor area</h1>
+				<h2 class="IntroductionTagline">The central place to get your team on track.</h2>
 			</div>
 		</div>
 		<!-- TODO:L Create better text and entry point for user. -->
@@ -18,24 +18,23 @@
 
 <script lang="ts" src="./LandingView.ts"></script>
 <style lang="scss" scoped>
-@import '../../styles/abstracts/Variables';
+@import "../../styles/abstracts/Variables";
 
-.HeroContainer{
-	
-	background: url('../../assets/hero-background.jpg') center;
+.HeroContainer {
+	background: url("../../assets/hero-background.jpg") center;
 
-	.IntroductionContainer{
+	.IntroductionContainer {
 		color: $White;
+		text-align: center;
 
-		.IntroductionTitle{
+		.IntroductionTitle {
 			font-weight: $Bold;
 		}
 
-		.IntroductionTagline{
+		.IntroductionTagline {
 			font-weight: $Regular;
 			font-size: 1.3rem;
 		}
 	}
 }
-
 </style>

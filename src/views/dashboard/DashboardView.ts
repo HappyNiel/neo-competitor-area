@@ -4,14 +4,14 @@ import AuthService from "@/core/services/Authentication.service";
 import { User } from "firebase";
 
 @Component({
-	components: {
-		HelloWorld
-	}
+    components: {
+        HelloWorld
+    }
 })
 export default class DashboardView extends Vue {
-	private currentUser: User | null = null;
+    private currentUser: User | null = null;
 
-	public async onLogoutPressed(): Promise<void> {
-		await AuthService.logoutUser();
-	}
+    public async onLogoutPressed(): Promise<void> {
+        await AuthService.logoutUser();
+    }
 }

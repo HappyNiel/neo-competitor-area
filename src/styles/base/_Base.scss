@@ -13,17 +13,13 @@ body{
 	background-color: $White;
 }
 
-#app{
-	// text-align: center;
-}
-
 // Default heading styling
 h1{
 	font-weight: $Bold;
 	margin-bottom: 1.5rem;
 	
 	&.Hero{
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 }
 
