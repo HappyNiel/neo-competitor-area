@@ -3,10 +3,7 @@
     <div class="Container HeaderContainer">
         <div class="LogoContainer">
             <router-link to="/">
-                <img
-                    class="Logo"
-                    src="@/assets/neo-endurance-logo.png"
-                    alt="NEO Endurance">
+                <img class="Logo" src="@/assets/neo-endurance-logo.png" alt="NEO Endurance">
             </router-link>
         </div>
         <nav class="NavigationContainer">
@@ -21,13 +18,11 @@ import { Component, Vue } from "vue-property-decorator";
 import LoginComponent from "@/components/login/LoginComponent.vue";
 
 @Component({
-	components: {
-		LoginComponent
-	}
+    components: {
+        LoginComponent
+    }
 })
-export default class TheHeader extends Vue {
-
-}
+export default class TheHeader extends Vue {}
 </script>
 
 

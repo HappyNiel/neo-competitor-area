@@ -3,7 +3,7 @@
 		<div class="HeroContainer">
 			<div class="IntroductionContainer">
 				<h1 class="Hero IntroductionTitle">Welcome to the NEO competitor area</h1>
-				<h2 class="IntroductionTagline">The central place to get your team on track.</h2>
+				<h2 class="IntroductionTagline">The central hub to get your team on track.</h2>
 			</div>
 		</div>
 		<!-- TODO:L Create better text and entry point for user. -->

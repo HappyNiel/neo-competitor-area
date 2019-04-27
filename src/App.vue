@@ -10,9 +10,9 @@ import { Component, Vue } from "vue-property-decorator";
 import TheHeader from "@/components/the-header/TheHeader.vue";
 
 @Component({
-	components: {
-		TheHeader
-	}
+    components: {
+        TheHeader
+    }
 })
 export default class App extends Vue {
 
