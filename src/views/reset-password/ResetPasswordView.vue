@@ -13,7 +13,7 @@
                     </p>
                 </section>
             </div>
-            <button @click="onResetPasswordClicked()" class="Button SubmitButton">Change password</button>
+            <button @click.prevent="onResetPasswordClicked()" class="Button SubmitButton">Change password</button>
         </form>
     </div>
 </div>
