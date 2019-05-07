@@ -17,7 +17,7 @@
                     </p>
                 </section>
             </div>
-            <button @click="onRegistrationClicked()" class="Button SubmitButton">Create account</button>
+            <button @click.prevent="onRegistrationClicked()" class="Button SubmitButton">Create account</button>
         </form>
     </div>
 </div>
