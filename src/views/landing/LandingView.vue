@@ -22,7 +22,6 @@
 @import "../../styles/abstracts/Variables";
 
 .HeroContainer {
-    background: url("../../assets/hero-background.jpg") center;
 
     .IntroductionContainer {
         color: $White;

@@ -7,10 +7,11 @@
 
 .HeroContainer {
     height: 50rem;
-    background: url('../../assets/hero-background.jpg') center no-repeat;
+    background: url('https://neo-endurance.com/team-area/hero-background.jpg') center no-repeat;
 }
 
-.ForgotPassword {
+.ForgotPassword,
+.GoToLogin {
     font-size: $S;
     margin-left: 1rem;
     margin-top: 0.5rem;

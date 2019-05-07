@@ -7,6 +7,7 @@ import firebase from "firebase/app";
 import RegisterView from "./views/register/RegisterView";
 import DashboardView from "./views/dashboard/DashboardView";
 import LandingView from "./views/landing/LandingView";
+import ResetPasswordView from "./views/reset-password/ResetPasswordView";
 
 Vue.use(Router);
 
@@ -35,6 +36,11 @@ const router = new Router({
             path: "/register",
             name: "register",
             component: RegisterView,
+        },
+        {
+            path: "/reset-password",
+            name: "resetpassword",
+            component: ResetPasswordView,
         },
         {
             path: "/dashboard",

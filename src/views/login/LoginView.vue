@@ -23,7 +23,7 @@
                         id="Password"
                     >
                     <p class="ForgotPassword">
-                        <router-link to="/register">Forgot your password?</router-link>
+                        <router-link to="/reset-password">Forgot your password?</router-link>
                     </p>
                 </section>
             </div>
@@ -34,4 +34,3 @@
 </template>
 
 <script lang="ts" src="./LoginView.ts"></script>
-<style lang="scss" scoped src="./LoginView.scss"></style>
