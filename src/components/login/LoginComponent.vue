@@ -1,18 +1,12 @@
 <template>
-	<div class="LoginComponent">
-		<button 
-			v-if="isUserLoggedIn()" 
-			@click="onLogoutButtonPressed"
-			class="Button Ghost">
-			Logout, {{ displayUserName() }}
-		</button>
-		<button 
-			v-else 
-			@click="onLoginButtonPressed"
-			class="Button Ghost">
-			Login
-		</button>
-	</div>
+<div class="LoginComponent">
+    <button
+        v-if="isUserLoggedIn()"
+        @click="onLogoutButtonPressed"
+        class="Button Ghost"
+    >Logout, {{ displayUserName() }}</button>
+    <button v-else @click="onLoginButtonPressed" class="Button Ghost">Login</button>
+</div>
 </template>
 
 <script lang="ts">
@@ -27,21 +21,20 @@ const userState = getModule(UserModule);
 
 @Component
 export default class LoginComponent extends Vue {
+    public onLogoutButtonPressed(): void {
+        AuthService.logoutUser();
+    }
 
-	public onLogoutButtonPressed(): void {
-		AuthService.logoutUser();
-	}
+    public onLoginButtonPressed(): void {
+        router.push("login");
+    }
 
-	public onLoginButtonPressed(): void {
-		router.push("login");
-	}
+    public displayUserName(): string {
+        return userState.email;
+    }
 
-	public displayUserName(): string {
-		return userState.email;
-	}
-
-	public isUserLoggedIn(): boolean {
-		return userState.isLoggedIn;
-	}
+    public isUserLoggedIn(): boolean {
+        return userState.isLoggedIn;
+    }
 }
 </script>

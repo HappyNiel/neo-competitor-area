@@ -1,46 +1,40 @@
 <template>
-	<div class="LandingView">
-		<div class="HeroContainer">
-			<div class="IntroductionContainer">
-				<h1 class="Hero IntroductionTitle">NEO Endurance competitor area</h1>
-				<h2 class="IntroductionTagline">Welcome to the NES competitor area.</h2>
-			</div>
-		</div>
-		<!-- TODO:L Create better text and entry point for user. -->
-		<div class="IntroductionTextWrapper">
-			<p>Team managers can manager their teams on this platform. The team manager has to create an account or login in order to manage team and entry.</p>
-			<p class="TextDevelopment">
-				<em>This platform is currently in developement. If you have any questions or feedback, don't hesitate to contact us.</em>
-			</p>
-		</div>
-	</div>
+    <div class="LandingView">
+        <div class="HeroContainer">
+            <div class="IntroductionContainer">
+                <h1 class="Hero IntroductionTitle">Welcome to the NEO competitor area</h1>
+                <h2 class="IntroductionTagline">The central hub to get your team on track.</h2>
+            </div>
+        </div>
+        <!-- TODO:L Create better text and entry point for user. -->
+        <div class="Container">
+            <p>The NEO Competitor area is the central place where competitors can find all information about competing in the NEO Endurance Series.</p>
+            <p>If there is any information missing, please contact us. We will solve the issue as soon as possible.</p>
+            <p class="TextDevelopment">
+                <em>This platform is currently in developement. If you have any questions or feedback, don't hesitate to contact us.</em>
+            </p>
+        </div>
+    </div>
 </template>
 
 <script lang="ts" src="./LandingView.ts"></script>
 <style lang="scss" scoped>
-@import '../../styles/main';
+@import "../../styles/abstracts/Variables";
 
-.HeroContainer{
-	width: 100%;
-	height: 30rem;
-	margin-bottom: 2rem;
-	background: url('../../assets/hero-background.jpg') center;
-	background-size: cover;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.HeroContainer {
 
-	.IntroductionContainer{
-		color: $White;
+    .IntroductionContainer {
+        color: $White;
+        text-align: center;
 
-		.IntroductionTitle{
-			font-weight: $Bold;
-		}
+        .IntroductionTitle {
+            font-weight: $Bold;
+        }
 
-		.IntroductionTagline{
-			font-weight: $Regular;
-			font-size: 1.3rem;
-		}
-	}
+        .IntroductionTagline {
+            font-weight: $Regular;
+            font-size: 1.3rem;
+        }
+    }
 }
 </style>

@@ -1,0 +1,18 @@
+@import '../../styles/abstracts/Variables';
+
+#Email,
+#Password {
+    width: 20rem;
+}
+
+.HeroContainer {
+    height: 50rem;
+    background: url('https://neo-endurance.com/team-area/hero-background.jpg') center no-repeat;
+}
+
+.ForgotPassword,
+.GoToLogin {
+    font-size: $S;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}

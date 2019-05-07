@@ -1,57 +1,53 @@
-*{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-html{
-	font-size: $RootFontSize;
+html {
+    font-size: $RootFontSize;
 }
 
-body{
-	font-family: $OpenSans;
-	color: $Text;
-	background-color: $White;
-}
-
-#app{
-	text-align: center;
+body {
+    font-family: $OpenSans;
+    color: $Text;
+    background-color: $White;
 }
 
 // Default heading styling
-h1{
-	font-weight: $Bold;
-	margin-bottom: 1.5rem;
-	
-	&.Hero{
-		font-size: 4rem;
-	}
+h1 {
+    font-weight: $Bold;
+    margin-bottom: 1.5rem;
+
+    &.Hero {
+        font-size: 3rem;
+    }
 }
 
-h3{
-	font-weight: $Regular;
-	font-size: 1.2rem;
-	margin-bottom: 1rem;
+h3 {
+    font-weight: $Regular;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 // Default text styling
-p{
-	margin: 0 0 0.75rem 0;
-	line-height: 1.5rem;
+p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5rem;
 }
 
 // Default link styling
-a{
-	color: $PrimaryBlue;
-	text-decoration: none;
+a {
+    color: $PrimaryBlue;
+    text-decoration: none;
 
-	&:hover{
-		text-decoration: underline;
-		color: $SecondaryBlue;
-	}
+    &:hover {
+        text-decoration: underline;
+        color: $SecondaryBlue;
+    }
 }
 
-.Container{
-	max-width: $MaxWidth;
-	margin: 0 auto;
-	padding: 0 1rem;
+.Container {
+    max-width: $MaxWidth;
+    margin: 0 auto;
+    padding: 0 1rem;
 }

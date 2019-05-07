@@ -4,11 +4,17 @@
 @import 'abstracts/Variables';
 
 // 2. Import defaults
-@import 
-	'base/Base',
-	'base/Font';
+@import
+    'base/Base',
+    'base/Font';
 
 // 3. Layout
 
 // 4. Components
-@import 'components/Button';
+@import
+    'components/Button',
+    'components/Form',
+    'components/Hero';
+
+// 5. Pages
+@import 'pages/Auth';

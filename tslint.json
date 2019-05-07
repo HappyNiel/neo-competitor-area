@@ -16,7 +16,7 @@
 		],
 		"indent": [
 			true,
-			"tabs"
+			"spaces"
 		],
 		"interface-name": false,
 		"ordered-imports": false,

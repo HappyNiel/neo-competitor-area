@@ -14,19 +14,19 @@ const userModule = getModule(UserModule);
 
 let app: any = null;
 const initializeApp = () => {
-	if (!app) {
-		app = new Vue({
-			router,
-			store,
-			render: (h) => h(App),
-		}).$mount("#app");
-	}
+    if (!app) {
+        app = new Vue({
+            router,
+            store,
+            render: (h) => h(App),
+        }).$mount("#app");
+    }
 };
 
 firebase.auth().onAuthStateChanged(() => {
-	// Update the user in the store whenever the Auth state changes.
-	userModule.updateCurrentUserStatus();
+    // Update the user in the store whenever the Auth state changes.
+    userModule.updateCurrentUserStatus();
 
-	initializeApp();
+    initializeApp();
 });
 

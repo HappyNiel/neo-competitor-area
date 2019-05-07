@@ -1,25 +1,25 @@
-@import '../../styles/main';
+@import '../../styles/abstracts/Variables';
 
-.HeaderComponent{
-	width: 100%;
-	height: 80px;
-	background-color: $White;
-	border-bottom: 1px solid $Grey;
+.HeaderComponent {
+    width: 100%;
+    height: 80px;
+    background-color: $White;
+    border-bottom: 1px solid $Grey;
 
-	.HeaderContainer{
-		display: flex;
-		justify-content: space-between;
-	}
+    .HeaderContainer {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.LogoContainer{
-	padding: 1rem 0 0.7rem 0;
+.LogoContainer {
+    padding: 1rem 0 0.7rem 0;
 
-	.Logo{
-		width: 135px;
-	}
+    .Logo {
+        width: 135px;
+    }
 }
 
-.NavigationContainer{
-	align-self: center;
+.NavigationContainer {
+    align-self: center;
 }
