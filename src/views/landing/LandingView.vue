@@ -19,7 +19,7 @@
 
 <script lang="ts" src="./LandingView.ts"></script>
 <style lang="scss" scoped>
-@import "../../styles/abstracts/Variables";
+@import "../../styles/abstracts/variables";
 
 .HeroContainer {
 

@@ -1,20 +1,20 @@
 @charset 'UTF-8';
 
 // 1. Import variables
-@import 'abstracts/Variables';
+@import 'abstracts/variables';
 
 // 2. Import defaults
 @import
-    'base/Base',
-    'base/Font';
+    'base/base',
+    'base/font';
 
 // 3. Layout
 
 // 4. Components
 @import
-    'components/Button',
-    'components/Form',
-    'components/Hero';
+    'components/button',
+    'components/form',
+    'components/hero';
 
 // 5. Pages
-@import 'pages/Auth';
+@import 'pages/auth';
