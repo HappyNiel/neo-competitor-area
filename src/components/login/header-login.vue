@@ -1,5 +1,5 @@
 <template>
-<div class="LoginComponent">
+<div class="HeaderLogin">
     <button
         v-if="isUserLoggedIn()"
         @click="onLogoutButtonPressed"
@@ -20,7 +20,7 @@ import AuthService from "../../core/services/Authentication.service";
 const userState = getModule(UserModule);
 
 @Component
-export default class LoginComponent extends Vue {
+export default class HeaderLogin extends Vue {
     public onLogoutButtonPressed(): void {
         AuthService.logoutUser();
     }

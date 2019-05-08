@@ -7,7 +7,7 @@
             </router-link>
         </div>
         <nav class="NavigationContainer">
-            <login-component></login-component>
+            <header-login></header-login>
         </nav>
     </div>
 </header>
@@ -15,16 +15,16 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import LoginComponent from "@/components/login/LoginComponent.vue";
+import HeaderLogin from "@/components/login/header-login.vue";
 
 @Component({
     components: {
-        LoginComponent
+        HeaderLogin
     }
 })
 export default class TheHeader extends Vue {}
 </script>
 
 
-<style lang="scss" scoped src="./TheHeader.scss"></style>
+<style lang="scss" scoped src="./the-header.scss"></style>
 
