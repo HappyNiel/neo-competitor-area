@@ -1,7 +1,7 @@
 import store from "@/core/store";
 import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
 import { User } from "firebase";
-import AuthService from "@/core/services/Authentication.service";
+import AuthService from "@/core/services/authentication.service";
 
 @Module({
     dynamic: true,
