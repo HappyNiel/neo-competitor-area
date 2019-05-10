@@ -1,5 +1,5 @@
 import Vue from "vue";
-import AuthService from "@/core/services/Authentication.service";
+import AuthService from "@/services/authentication.service";
 import { Component } from "vue-property-decorator";
 
 @Component

@@ -1,12 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
-import store from "./core/store";
+import store from "./store";
+import router from "./router";
 import firebase from "firebase/app";
 import "firebase/auth";
-import router from "./router";
 import { firebaseKey } from "./firebase";
 import { getModule } from "vuex-module-decorators";
-import UserModule from "./core/store/modules/User.module";
+import UserModule from "./store/modules/User.module";
 
 Vue.config.productionTip = false;
 firebase.initializeApp(firebaseKey);

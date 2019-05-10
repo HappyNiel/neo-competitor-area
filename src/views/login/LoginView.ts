@@ -1,5 +1,5 @@
 import { Component, Vue } from "vue-property-decorator";
-import AuthService from "@/core/services/authentication.service";
+import AuthService from "@/services/authentication.service";
 
 @Component
 export default class LoginView extends Vue {

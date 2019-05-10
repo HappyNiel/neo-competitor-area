@@ -10,12 +10,12 @@
 </template>
 
 <script lang="ts">
-import store from "@/core/store";
-import { Component, Vue } from "vue-property-decorator";
+import store from "@/store";
 import router from "@/router";
-import UserModule from "../../core/store/modules/User.module";
+import { Component, Vue } from "vue-property-decorator";
+import UserModule from "@/store/modules/User.module";
 import { getModule } from "vuex-module-decorators";
-import AuthService from "../../core/services/Authentication.service";
+import AuthService from "@/services/authentication.service";
 
 const userState = getModule(UserModule);
 

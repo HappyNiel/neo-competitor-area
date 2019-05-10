@@ -11,12 +11,12 @@
 	},
 	"dependencies": {
 		"core-js": "^2.6.5",
-		"firebase": "^5.9.4",
+		"firebase": "^6.0.2",
 		"vue": "^2.6.6",
 		"vue-class-component": "^6.0.0",
 		"vue-property-decorator": "^8.0.0",
 		"vue-router": "^3.0.1",
-		"vuefire": "^1.4.5",
+		"vuefire": "^2.0.0-alpha.24",
 		"vuex": "^3.0.1",
 		"vuex-module-decorators": "^0.9.8"
 	},
@@ -29,9 +29,9 @@
 		"@vue/cli-service": "^3.5.0",
 		"@vue/test-utils": "1.0.0-beta.29",
 		"chai": "^4.1.2",
-		"node-sass": "^4.9.0",
+		"node-sass": "^4.12.0",
 		"sass-loader": "^7.1.0",
-		"typescript": "^3.2.1",
+		"typescript": "^3.4.3",
 		"vue-template-compiler": "^2.5.21"
 	}
 }
