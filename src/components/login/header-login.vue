@@ -3,9 +3,14 @@
     <button
         v-if="isUserLoggedIn()"
         @click="onLogoutButtonPressed"
-        class="Button Ghost"
+        class="Button Ghost HeaderButton"
     >Logout, {{ displayUserName() }}</button>
     <button v-else @click="onLoginButtonPressed" class="Button Ghost">Login</button>
+    <button
+        v-if="!isUserLoggedIn()"
+        @click="onSignUpButtonPressed"
+        class="Button HeaderButton"
+    >Sign up</button>
 </div>
 </template>
 
@@ -29,6 +34,10 @@ export default class HeaderLogin extends Vue {
         router.push("login");
     }
 
+    public onSignUpButtonPressed(): void {
+        router.push("register");
+    }
+
     public displayUserName(): string {
         return userState.email;
     }
@@ -38,3 +47,8 @@ export default class HeaderLogin extends Vue {
     }
 }
 </script>
+<style lang="scss" scoped>
+.HeaderButton {
+    margin-left: 1rem;
+}
+</style>
