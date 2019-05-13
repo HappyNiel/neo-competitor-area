@@ -1,14 +1,24 @@
-
 import firebase, { User } from "firebase/app";
 import router from "@/router";
+import { getModule } from "vuex-module-decorators";
+import UserModule from "@/store/modules/User.module";
+import FirestoreService from "./firestore.service";
 
-export class AuthService {
+
+const userState = getModule(UserModule);
+
+class AuthService {
     // TODO: Unit test this file
 
     // Register user
     public async registerNewUser(email: string, password: string): Promise<void> {
         return firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((user) => {
+            .then((userCredentials) => {
+                if (userCredentials !== null) {
+                    const userId: string | null = userCredentials.user.uid;
+                    FirestoreService.createNewUser(userId);
+                }
+
                 return router.replace("dashboard");
             },
             (error) => {

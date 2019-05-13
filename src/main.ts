@@ -1,16 +1,22 @@
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store";
+import { getModule } from "vuex-module-decorators";
+import UserModule from "@/store/modules/User.module";
 import router from "./router";
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
 import { firebaseKey } from "./firebase";
-import { getModule } from "vuex-module-decorators";
-import UserModule from "./store/modules/User.module";
+import { firestorePlugin } from "vuefire";
 
 Vue.config.productionTip = false;
+Vue.use(firestorePlugin);
+
 firebase.initializeApp(firebaseKey);
-const userModule = getModule(UserModule);
+export const database = firebase.firestore();
+// userState is the user module in the store.
+const userState = getModule(UserModule);
 
 let app: any = null;
 const initializeApp = () => {
@@ -25,8 +31,15 @@ const initializeApp = () => {
 
 firebase.auth().onAuthStateChanged(() => {
     // Update the user in the store whenever the Auth state changes.
-    userModule.updateCurrentUserStatus();
+    userState.updateCurrentUserStatus();
 
     initializeApp();
+    // database.collection("testing")
+    //     .doc("o9w3dc8MIwUiDnrXmxPL")
+    //     .get()
+    //     .then(snapshot => {
+    //         const document = snapshot.data()
+    //         console.log(document);
+    //     }
+    // );
 });
-
