@@ -6,7 +6,7 @@
             <div class="FormInputContainer">
                 <section>
                     <label for="Email">Email</label>
-                    <input v-model="email" type="text" name="email" id="Email">
+                    <input v-model="email" type="text" name="email" id="Email" class="AuthInputField">
                     <p class="GoToLogin">
                         Already have an account?
                         <router-link to="/login">Login here</router-link>.

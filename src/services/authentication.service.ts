@@ -1,8 +1,10 @@
-import firebase, { User } from "firebase/app";
+import firebase from "firebase";
+import { User } from "firebase/app";
 import router from "@/router";
 import { getModule } from "vuex-module-decorators";
 import UserModule from "@/store/modules/User.module";
 import FirestoreService from "./firestore.service";
+import NewUser from "@/interfaces/new-user.interface";
 
 
 const userState = getModule(UserModule);
@@ -16,13 +18,11 @@ class AuthService {
     // TODO: Unit test this file
 
     // Register user
-    public async registerNewUser(email: string, password: string): Promise<void> {
-        return firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredentials) => {
-                if (userCredentials !== null) {
-                    const userId: string | null = userCredentials.user.uid;
-                    this.firestoreService.createNewUser(userId);
-                }
+    public async registerNewUser(teamManager: NewUser, password: string): Promise<void> {
+        return firebase.auth().createUserWithEmailAndPassword(teamManager.email, password)
+            .then((userCredential: firebase.auth.UserCredential) => {
+                const userId = userCredential.user.uid;
+                this.firestoreService.createNewUser(userId, teamManager);
 
                 return router.replace("dashboard");
             },
@@ -68,5 +68,5 @@ class AuthService {
         return firebase.auth().currentUser;
     }
 }
-
-export default new AuthService();
+const authService = new AuthService();
+export default authService;

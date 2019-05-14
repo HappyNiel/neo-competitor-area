@@ -11,6 +11,7 @@
                         type="text"
                         name="email"
                         id="Email"
+                        class="AuthInputField"
                         placeholder="email@example.com"
                     >
                 </section>
@@ -21,6 +22,7 @@
                         type="password"
                         name="password"
                         id="Password"
+                        class="AuthInputField"
                     >
                     <p class="ForgotPassword">
                         <router-link to="/reset-password">Forgot your password?</router-link>
