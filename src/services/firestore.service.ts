@@ -1,6 +1,6 @@
 import {database} from "@/main";
 
-class FirestoreService {
+export default class FirestoreService {
 
     public createNewUser(id: string): Promise<void> {
         return database.collection("users").doc(id).set({
@@ -9,5 +9,3 @@ class FirestoreService {
         });
     }
 }
-
-export default new FirestoreService();

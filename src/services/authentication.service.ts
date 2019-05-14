@@ -8,6 +8,11 @@ import FirestoreService from "./firestore.service";
 const userState = getModule(UserModule);
 
 class AuthService {
+    private firestoreService: FirestoreService;
+
+    public constructor() {
+        this.firestoreService = new FirestoreService();
+    }
     // TODO: Unit test this file
 
     // Register user
@@ -16,7 +21,7 @@ class AuthService {
             .then((userCredentials) => {
                 if (userCredentials !== null) {
                     const userId: string | null = userCredentials.user.uid;
-                    FirestoreService.createNewUser(userId);
+                    this.firestoreService.createNewUser(userId);
                 }
 
                 return router.replace("dashboard");
