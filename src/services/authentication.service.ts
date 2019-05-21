@@ -55,3 +55,5 @@ export class AuthService {
 }
 
 export default new AuthService();
+
+// Testing the git configs
