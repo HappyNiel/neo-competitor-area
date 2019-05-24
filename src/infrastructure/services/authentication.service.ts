@@ -1,18 +1,20 @@
 import firebase, { User } from 'firebase/app';
-import router from '@/router';
 import { getModule } from 'vuex-module-decorators';
 import UserModule from '@/store/modules/User.module';
 import FirestoreService from './firestore.service';
 import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import RoutingService from '@/router/routing.service';
 
 
 const userState = getModule(UserModule);
 
 class AuthService {
     private firestoreService: FirestoreService;
+    private routingService: RoutingService;
 
     public constructor() {
         this.firestoreService = new FirestoreService();
+        this.routingService = new RoutingService();
     }
     // TODO: Unit test this file
 
@@ -23,7 +25,7 @@ class AuthService {
                 const userId = userCredential.user.uid;
                 this.firestoreService.createNewUser(userId, teamManager);
 
-                return router.replace('dashboard');
+                this.routingService.redirectToDashboard();
             },
             (error) => {
                 // TODO: replace this with proper error handling
@@ -36,7 +38,7 @@ class AuthService {
         return firebase.auth().signInWithEmailAndPassword(email, password)
             .then((user) => {
                 this.firestoreService.retrieveUser(user.user.uid);
-                return router.replace('dashboard');
+                this.routingService.redirectToDashboard();
             },
             (error) => {
                 // TODO: replace this with proper error handling
@@ -47,7 +49,7 @@ class AuthService {
     // Logout
     public async logoutUser(): Promise<void> {
         return firebase.auth().signOut().then(() => {
-            router.replace('login');
+            this.routingService.redirectToLoginPage();
         });
     }
 

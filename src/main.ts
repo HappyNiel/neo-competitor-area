@@ -33,11 +33,11 @@ const initializeApp = () => {
 firebase.auth().onAuthStateChanged(() => {
     // Update the user in the store whenever the Auth state changes.
     userState.updateCurrentUserStatus();
-    
-    const firestoreService = new FirestoreService();
-    setTimeout(() => {
-        firestoreService.retrieveUser(userState.uid);
-    }, 2000);
+
+    // const firestoreService = new FirestoreService();
+    // setTimeout(() => {
+    //     firestoreService.retrieveUser(userState.uid);
+    // }, 2000);
 
     initializeApp();
     // database.collection('testing')
