@@ -1,10 +1,9 @@
-import firebase from "firebase";
-import { User } from "firebase/app";
-import router from "@/router";
-import { getModule } from "vuex-module-decorators";
-import UserModule from "@/store/modules/User.module";
-import FirestoreService from "./firestore.service";
-import NewUser from "@/interfaces/new-user.interface";
+import firebase, { User } from 'firebase/app';
+import router from '@/router';
+import { getModule } from 'vuex-module-decorators';
+import UserModule from '@/store/modules/User.module';
+import FirestoreService from './firestore.service';
+import NewUser from '@/infrastructure/interfaces/new-user.interface';
 
 
 const userState = getModule(UserModule);
@@ -24,7 +23,7 @@ class AuthService {
                 const userId = userCredential.user.uid;
                 this.firestoreService.createNewUser(userId, teamManager);
 
-                return router.replace("dashboard");
+                return router.replace('dashboard');
             },
             (error) => {
                 // TODO: replace this with proper error handling
@@ -36,7 +35,8 @@ class AuthService {
     public async loginUser(email: string, password: string): Promise<void> {
         return firebase.auth().signInWithEmailAndPassword(email, password)
             .then((user) => {
-                return router.replace("dashboard");
+                this.firestoreService.retrieveUser(user.user.uid);
+                return router.replace('dashboard');
             },
             (error) => {
                 // TODO: replace this with proper error handling
@@ -47,7 +47,7 @@ class AuthService {
     // Logout
     public async logoutUser(): Promise<void> {
         return firebase.auth().signOut().then(() => {
-            router.replace("login");
+            router.replace('login');
         });
     }
 
@@ -56,7 +56,7 @@ class AuthService {
         return firebase.auth().sendPasswordResetEmail(email)
             .then(() => {
                 // TODO: replace this with proper user flow.
-                alert("A password reset link has been sent to your email address.");
+                alert('A password reset link has been sent to your email address.');
             },
             (error) => {
                 // TODO: replace this with proper error handling
