@@ -15,14 +15,10 @@
 </template>
 
 <script lang='ts'>
-import store from '@/store';
+import { globalStore } from '@/store';
 import router from '@/router';
 import { Component, Vue } from 'vue-property-decorator';
-import UserModule from '@/store/modules/User.module';
-import { getModule } from 'vuex-module-decorators';
 import AuthService from '@/infrastructure/services/authentication.service';
-
-const userState = getModule(UserModule);
 
 @Component
 export default class HeaderLogin extends Vue {
@@ -39,11 +35,11 @@ export default class HeaderLogin extends Vue {
     }
 
     public displayUserName(): string {
-        return userState.firstName;
+        return globalStore.user.firstName;
     }
 
     public isUserLoggedIn(): boolean {
-        return userState.isLoggedIn;
+        return globalStore.user.isLoggedIn;
     }
 }
 </script>

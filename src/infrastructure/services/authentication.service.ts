@@ -1,12 +1,7 @@
 import firebase, { User } from 'firebase/app';
-import { getModule } from 'vuex-module-decorators';
-import UserModule from '@/store/modules/User.module';
 import FirestoreService from './firestore.service';
 import NewUser from '@/infrastructure/interfaces/new-user.interface';
 import RoutingService from '@/router/routing.service';
-
-
-const userState = getModule(UserModule);
 
 class AuthService {
     private firestoreService: FirestoreService;
@@ -66,7 +61,7 @@ class AuthService {
             });
     }
 
-    public getCurrentUser(): User | null {
+    public getCurrentUser(): User {
         return firebase.auth().currentUser;
     }
 }
