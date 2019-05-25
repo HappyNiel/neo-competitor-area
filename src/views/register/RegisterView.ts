@@ -1,6 +1,5 @@
-import Vue from 'vue';
 import authService from '@/infrastructure/services/authentication.service';
-import { Component } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 import RegisteredUser from '@/infrastructure/interfaces/registered-user.class';
 
 

@@ -3,4 +3,3 @@ export default interface NewUser {
     lastName: string;
     email: string;
 }
-
