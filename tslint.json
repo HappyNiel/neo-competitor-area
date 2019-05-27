@@ -36,6 +36,11 @@
 			true,
 			"check-open-brace",
 			"check-whitespace"
+		],
+		"variable-name": [
+			true,
+			"check-format",
+			"allow-leading-underscore"
 		]
 	}
 }
