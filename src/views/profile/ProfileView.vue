@@ -13,9 +13,9 @@
         </section>
         <section>
             <label for='DiscordTag'>Discord user tag:</label>
-            <input v-model='discordTag' type='text' name='DiscordTag' id='DiscordTag' placeholder="Username#1234" class='AuthInputField'>
+            <input v-model='userProfile.discordTag' type='text' name='DiscordTag' id='DiscordTag' placeholder="Username#1234" class='AuthInputField'>
         </section>
-        <button @click.prevent='' class='Button SubmitButton'>Update profile</button>
+        <button @click.prevent='onUpdateProfileClicked()' class='Button SubmitButton'>Update profile</button>
     </form>
     <h2>Account information</h2>
     <form class="Form">

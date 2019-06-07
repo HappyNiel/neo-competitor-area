@@ -22,8 +22,16 @@ export class UserStore extends VuexModule {
         return this.userProfile ? this.userProfile.lastName : 'n/a';
     }
 
+    public get uid(): string {
+        return this.authUser !== null ? this.authUser.uid : '';
+    }
+
     public get email(): string {
         return this.authUser !== null ? this.authUser.email : '';
+    }
+
+    public get profile(): any {
+        return this.userProfile;
     }
 
     @mutation
@@ -32,8 +40,8 @@ export class UserStore extends VuexModule {
     }
 
     @mutation
-    public updateUserProfile(document: any): void {
-        this.userProfile = document;
+    public updateUserProfile(profile: any): void {
+        this.userProfile = profile;
     }
 
     @mutation
