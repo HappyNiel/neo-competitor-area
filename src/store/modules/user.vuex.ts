@@ -8,7 +8,7 @@ const fireStoreService = new FirestoreService();
 @Module()
 export class UserStore extends VuexModule {
     private authUser: User = null;
-    private userProfile: any = null;
+    private userProfile: any = {};
 
     public get isLoggedIn(): boolean {
         return this.authUser !== null ? true : false;
@@ -18,19 +18,35 @@ export class UserStore extends VuexModule {
         return this.userProfile ? this.userProfile.firstName : 'n/a';
     }
 
+    public get lastName(): string {
+        return this.userProfile ? this.userProfile.lastName : 'n/a';
+    }
+
+    public get uid(): string {
+        return this.authUser !== null ? this.authUser.uid : '';
+    }
+
+    public get email(): string {
+        return this.authUser !== null ? this.authUser.email : '';
+    }
+
+    public get profile(): any {
+        return this.userProfile;
+    }
+
     @mutation
     public updateCurrentUser(user: User): void {
         this.authUser = user;
     }
 
     @mutation
-    public updateUserProfile(document: any): void {
-        this.userProfile = document;
+    public updateUserProfile(profile: any): void {
+        this.userProfile = profile;
     }
 
     @mutation
     public clearUserProfile(): void {
-        this.userProfile = undefined;
+        this.userProfile = {};
     }
 
     // Fetch both the auth state of the user and the Firestore document.

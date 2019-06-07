@@ -8,6 +8,7 @@ import RegisterView from '@/views/register/RegisterView';
 import DashboardView from '@/views/dashboard/DashboardView';
 import LandingView from '@/views/landing/LandingView';
 import ResetPasswordView from '@/views/reset-password/ResetPasswordView';
+import ProfileView from '@/views/profile/ProfileView';
 
 Vue.use(Router);
 
@@ -25,6 +26,9 @@ const router = new Router({
         { path: '/no-access', name: 'noaccess', component: NoAccessView, },
 
         { path: '/dashboard', name: 'dashboard', component: DashboardView,
+            meta: { requiresAuth: true }
+        },
+        { path: '/profile', name: 'profile', component: ProfileView,
             meta: { requiresAuth: true }
         },
         // {

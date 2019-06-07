@@ -15,4 +15,12 @@ export default class FirestoreAPI {
             return snapshot.data();
         });
     }
+
+    public async updateUserProfile(id: string, document: any): Promise<void> {
+        return database.collection('users').doc(id).update(document)
+            .catch((error) => {
+                // The document probably doesn't exist.
+                console.error('Error updating document: ', error);
+            });
+    }
 }
