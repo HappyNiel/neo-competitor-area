@@ -3,18 +3,23 @@
 // 1. Import variables
 @import 'abstracts/variables';
 
-// 2. Import defaults
+// 2. Import vendors
+@import
+    '~bootstrap/dist/css/bootstrap.css',
+    '~bootstrap-vue/dist/bootstrap-vue.css';
+
+// 3. Import defaults
 @import
     'base/base',
     'base/font';
 
-// 3. Layout
+// 4. Layout
 
-// 4. Components
+// 5. Components
 @import
     'components/button',
     'components/form',
     'components/hero';
 
-// 5. Pages
+// 6. Pages
 @import 'pages/auth';

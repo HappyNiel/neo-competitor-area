@@ -7,9 +7,11 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import { firebaseKey } from './firebase';
 import { firestorePlugin } from 'vuefire';
+import BootstrapVue from 'bootstrap-vue';
 
 Vue.config.productionTip = false;
 Vue.use(firestorePlugin);
+Vue.use(BootstrapVue);
 
 firebase.initializeApp(firebaseKey);
 export const database = firebase.firestore();
