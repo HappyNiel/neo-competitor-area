@@ -7,13 +7,13 @@
             </div>
         </div>
         <!-- TODO:L Create better text and entry point for user. -->
-        <div class='Container'>
+        <b-container>
             <p>The NEO Competitor area is the central place where competitors can find all information about competing in the NEO Endurance Series.</p>
             <p>If there is any information missing, please contact us. We will solve the issue as soon as possible.</p>
             <p class='TextDevelopment'>
                 <em>This platform is currently in developement. If you have any questions or feedback, don't hesitate to contact us.</em>
             </p>
-        </div>
+        </b-container>
     </div>
 </template>
 
