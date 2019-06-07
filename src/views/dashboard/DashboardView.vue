@@ -1,8 +1,8 @@
 <template>
 	<div class='DashboardView'>
         <b-container>
-            <h1>Menu</h1>
-        <router-link to='/profile'>My profile</router-link>
+            <h1>Dashboard</h1>
+            <p>Dashboard will come here</p>
 
 		<p>hello</p>
 		<!-- <h1>Hello {{ currentUser.email }}</h1> -->

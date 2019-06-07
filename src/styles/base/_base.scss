@@ -16,11 +16,16 @@ body {
 // Default heading styling
 h1 {
     font-weight: $Bold;
+    margin-top: 2rem;
     margin-bottom: 1.5rem;
 
     &.Hero {
         font-size: 3rem;
     }
+}
+
+h2 {
+    margin: 1rem 0;
 }
 
 h3 {
@@ -44,10 +49,4 @@ a {
         text-decoration: underline;
         color: $SecondaryBlue;
     }
-}
-
-.Container {
-    max-width: $MaxWidth;
-    margin: 0 auto;
-    padding: 0 1rem;
 }
