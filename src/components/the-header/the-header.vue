@@ -1,5 +1,6 @@
 <template>
     <b-navbar
+    sticky
     class="HeaderComponent">
         <b-container
         class="HeaderContainer"
@@ -20,48 +21,28 @@
                 </b-nav-item>
                 <b-nav-item-dropdown 
                 v-if="isUserLoggedIn()"
-                text="User"
+                :text="displayUserName()"
                 right>
                     <b-dropdown-item to="dashboard">Dashboard</b-dropdown-item>
                     <b-dropdown-item to="profile">My profile</b-dropdown-item>
                     <b-dropdown-item @click="onLogoutButtonPressed">Logout</b-dropdown-item>
                 </b-nav-item-dropdown>
-                <b-nav-item
+                <b-button
                 v-if="!isUserLoggedIn()"
+                variant="outline-primary"
                 to="login">
                     Login
-                </b-nav-item>
-                <b-nav-item
+                </b-button>
+                <b-button
                 v-if="!isUserLoggedIn()"
+                variant="primary"
                 to="register">
                     Sign up
-                </b-nav-item>
+                </b-button>
             </b-navbar-nav>
         </b-container>
     </b-navbar>
 </template>
 
-<script lang="ts">
-import { globalStore } from '@/store';
-import router from '@/router';
-import AuthService from '@/infrastructure/services/authentication.service';
-import { Component, Vue } from 'vue-property-decorator';
-import HeaderLogin from '@/components/login/header-login.vue';
-
-@Component
-export default class TheHeader extends Vue {
-    public onLogoutButtonPressed(): void {
-        AuthService.logoutUser();
-    }
-
-    public displayUserName(): string {
-        return globalStore.user.firstName;
-    }
-
-    public isUserLoggedIn(): boolean {
-        return globalStore.user.isLoggedIn;
-    }
-}
-</script>
-
+<script lang="ts" src="./the-header.ts"></script>
 <style lang="scss" scoped src="./the-header.scss"></style>

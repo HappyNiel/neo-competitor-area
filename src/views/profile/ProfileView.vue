@@ -1,6 +1,7 @@
 <template>
 <div class="ProfileView">
-    <h1>My profile</h1>
+    <b-container>
+        <h1>My profile</h1>
     <h2>Profile information</h2>
     <form class="Form">
         <section>
@@ -27,6 +28,7 @@
             <button @click.prevent='onResetPasswordClicked()' class='Button Ghost'>Reset password</button>
         </section>
     </form>
+    </b-container>
 </div>
 </template>
 

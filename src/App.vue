@@ -1,15 +1,13 @@
 <template>
 	<div id='app'>
 		<the-header></the-header>
-        <b-container>
-		    <router-view/>
-        </b-container>
+		<router-view/>
 	</div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
-import TheHeader from '@/components/the-header/the-header.vue';
+import TheHeader from '@/components/the-header/the-header';
 
 @Component({
     components: {
