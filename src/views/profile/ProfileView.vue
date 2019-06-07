@@ -24,7 +24,7 @@
             <input v-model='email' type='text' name='Email' id='Email' class='AuthInputField'>
         </section>
         <section>
-            <button @click.prevent='' class='Button Ghost'>Reset password</button>
+            <button @click.prevent='onResetPasswordClicked()' class='Button Ghost'>Reset password</button>
         </section>
     </form>
 </div>
