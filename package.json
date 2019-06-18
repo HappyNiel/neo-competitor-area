@@ -10,9 +10,9 @@
         "test-u": "vue-cli-service test:unit"
     },
     "dependencies": {
-        "bootstrap-vue": "^2.0.0-rc.22",
+        "bootstrap-vue": "^2.0.0-rc.24",
         "core-js": "^2.6.5",
-        "firebase": "^6.1.1",
+        "firebase": "^6.2.0",
         "vue": "^2.6.6",
         "vue-class-component": "^7.1.0",
         "vue-property-decorator": "^8.0.0",
