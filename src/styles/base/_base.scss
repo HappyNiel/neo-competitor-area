@@ -13,6 +13,10 @@ body {
     background-color: $White;
 }
 
+.content {
+    min-height: calc(100vh - 6rem);
+}
+
 // Default heading styling
 h1 {
     font-weight: $Bold;
