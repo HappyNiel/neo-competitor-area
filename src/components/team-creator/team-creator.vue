@@ -61,12 +61,12 @@
                         </b-form-input>
                     </b-form-group>
                 </b-card>
-                <b-card
+                <!-- <b-card
                     header="Invoice information"
                     header-text-variant="white"
                     header-bg-variant="secondary">
                     <h3>TBD</h3>
-                </b-card>
+                </b-card> -->
                 <b-card
                     header="Additional information"
                     header-text-variant="white"
@@ -90,12 +90,12 @@
                         </b-form-input>
                     </b-form-group>
                 </b-card>
-                <b-card
+                <!-- <b-card
                     header="Driver line-up"
                     header-text-variant="white"
                     header-bg-variant="secondary">
                     <h3>TBD</h3>
-                </b-card>
+                </b-card> -->
 
                 <b-button type="submit" variant="primary">Create entry</b-button>
             </b-form>
