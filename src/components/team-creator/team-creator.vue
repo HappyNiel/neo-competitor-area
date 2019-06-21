@@ -62,7 +62,7 @@
                     </b-form-group>
                 </b-card>
                 <b-card
-                    header="Entry information"
+                    header="Invoice information"
                     header-text-variant="white"
                     header-bg-variant="secondary">
                     <h3>TBD</h3>
