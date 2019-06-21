@@ -2,6 +2,7 @@ input[type=text],
 input[type=email],
 input[type=url],
 input[type=password],
+input[type=number],
 textarea {
     padding: 0.5rem 1rem;
     border: 1px solid $Grey;
@@ -51,4 +52,8 @@ textarea {
         display: block;
         margin: 2rem auto 0 auto;
     }
+}
+
+.card {
+    margin: 1rem 0;
 }

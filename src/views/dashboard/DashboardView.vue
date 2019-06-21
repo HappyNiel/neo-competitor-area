@@ -3,9 +3,7 @@
         <b-container>
             <h1>Dashboard</h1>
             <p>Dashboard will come here</p>
-            <TeamOverview></TeamOverview>
-		<p>hello</p>
-		<!-- <h1>Hello {{ currentUser.email }}</h1> -->
+            <TeamCreator></TeamCreator>
         </b-container>
 	</div>
 </template>

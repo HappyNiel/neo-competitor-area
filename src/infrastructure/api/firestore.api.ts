@@ -1,5 +1,6 @@
 import { database } from '@/main';
 import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import EntryForm from "../interfaces/EntryForm.class";
 
 export default class FirestoreAPI {
 
@@ -23,4 +24,8 @@ export default class FirestoreAPI {
                 console.error('Error updating document: ', error);
             });
     }
+
+    // public createNewEntry(teamManagerId: string, entry: EntryForm): Promise<void> {
+    //     return database.collection('entries').doc().set(entry);
+    // }
 }
