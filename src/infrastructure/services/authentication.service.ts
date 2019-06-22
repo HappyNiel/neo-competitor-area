@@ -1,6 +1,6 @@
 import firebase, { User } from 'firebase/app';
 import FirestoreService from './firestore.service';
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import NewUser from '@/infrastructure/models/new-user.interface';
 import RoutingService from '@/router/routing.service';
 
 class AuthService {

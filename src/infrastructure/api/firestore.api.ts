@@ -1,6 +1,6 @@
 import { database } from '@/main';
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
-import EntryForm from "../interfaces/entry-form.class";
+import NewUser from '@/infrastructure/models/new-user.interface';
+import { Entry } from '../models/entry.interface';
 
 export default class FirestoreAPI {
 
@@ -25,7 +25,7 @@ export default class FirestoreAPI {
             });
     }
 
-    public createNewEntry(entry: EntryForm): Promise<void> {
+    public createNewEntry(entry: Entry): Promise<void> {
         return database.collection('entries').doc().set(entry);
     }
 }

@@ -1,14 +1,15 @@
 import { Vue, Component } from 'vue-property-decorator';
-import EntryForm from '@/infrastructure/interfaces/entry-form.class';
-import { globalStore } from "@/store";
+import { EntryForm, Entry } from '@/infrastructure/models/entry.interface';
+import { globalStore } from '@/store';
+import FirestoreAPI from '@/infrastructure/api/firestore.api';
 
 @Component
 export default class TeamCreator extends Vue {
-    public entryForm: EntryForm = {};
-    private teamManager: string = globalStore.user.uid;
-    private teamManagerProfile: any = globalStore.user.profile;
+    public entryForm: Entry = {};
+    private fireStore: FirestoreAPI = new FirestoreAPI();
 
     public onSubmit(): void {
-        console.log(this.entryForm);
+        this.entryForm.manager = globalStore.user.uid;
+        this.fireStore.createNewEntry(this.entryForm);
     }
 }
