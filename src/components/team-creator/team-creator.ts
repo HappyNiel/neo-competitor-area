@@ -1,5 +1,5 @@
 import { Vue, Component } from 'vue-property-decorator';
-import { EntryForm, Entry } from '@/infrastructure/models/entry.interface';
+import { Entry } from '@/infrastructure/models/entry.interface';
 import { globalStore } from '@/store';
 import FirestoreAPI from '@/infrastructure/api/firestore.api';
 

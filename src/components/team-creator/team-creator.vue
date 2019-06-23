@@ -2,7 +2,7 @@
     <div id="TeamCreator">
         <h1>Create an entry</h1>
         <b-card>
-            <b-form @submit="onSubmit">
+            <b-form>
                 <b-card
                     header="Entry information"
                     header-text-variant="white"
@@ -49,7 +49,7 @@
                         </b-form-input>
                     </b-form-group>
                     <b-form-group
-                        label="Entry car number"
+                        label="Requested car number"
                         label-for="EntryCarNumber">
                         <b-form-input
                             id="EntryCarNumber"
@@ -97,9 +97,54 @@
                     <h3>TBD</h3>
                 </b-card> -->
 
-                <b-button type="submit" variant="primary">Create entry</b-button>
+                <b-button v-b-modal.EntryFormConfirmation variant="primary">Create entry</b-button>
             </b-form>
         </b-card>
+
+        <b-modal 
+            id="EntryFormConfirmation"
+            title="Confirm entry"
+            size="lg"
+            @ok="onSubmit">
+            <b-card
+                header="Entry information"
+                header-text-variant="white"
+                header-bg-variant="secondary">
+                <b-row>
+                    <b-col>Name:</b-col>
+                    <b-col>{{ entryForm.name }}</b-col>
+                </b-row>
+                <b-row>
+                    <b-col>Identifier:</b-col>
+                    <b-col>{{ entryForm.identifier }}</b-col>
+                </b-row>
+                <b-row>
+                    <b-col>Nationality:</b-col>
+                    <b-col>{{ entryForm.nationality }}</b-col>
+                </b-row>
+                <b-row>
+                    <b-col>iRacing team ID:</b-col>
+                    <b-col>{{ entryForm.id }}</b-col>
+                </b-row>
+                <b-row>
+                    <b-col>Requested car number:</b-col>
+                    <b-col>{{ entryForm.carNumber }}</b-col>
+                </b-row>
+            </b-card>
+            <b-card
+                header="Additional information"
+                header-text-variant="white"
+                header-bg-variant="secondary">
+                <b-row>
+                    <b-col>Website:</b-col>
+                    <b-col>{{ entryForm.website }}</b-col>
+                </b-row>
+                <b-row>
+                    <b-col>Twitter handle:</b-col>
+                    <b-col>{{ entryForm.twitter }}</b-col>
+                </b-row>
+            </b-card>
+        </b-modal>
     </div>
 </template>
 
