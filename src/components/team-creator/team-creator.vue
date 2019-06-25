@@ -83,11 +83,13 @@
                     <b-form-group
                         label="Entry Twitter handle"
                         label-for="EntryTwitter">
-                        <b-form-input
-                            id="EntryTwitter"
-                            type="text"
-                            v-model="entryForm.twitter">
-                        </b-form-input>
+                        <b-input-group prepend="@">
+                            <b-form-input
+                                id="EntryTwitter"
+                                type="text"
+                                v-model="entryForm.twitter">
+                            </b-form-input>
+                        </b-input-group>
                     </b-form-group>
                 </b-card>
                 <!-- <b-card
