@@ -1,4 +1,4 @@
-import NewUser from '@/infrastructure/models/new-user.interface';
+import NewUser from '@/infrastructure/interfaces/new-user.interface';
 import FirestoreAPI from '../api/firestore.api';
 
 export default class FirestoreService {

@@ -1,4 +1,4 @@
-import NewUser from './new-user.interface';
+import NewUser from '../interfaces/new-user.interface';
 
 export default class RegisteredUser implements NewUser {
     public firstName: string;

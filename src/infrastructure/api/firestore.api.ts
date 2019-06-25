@@ -1,6 +1,7 @@
 import { database } from '@/main';
-import NewUser from '@/infrastructure/models/new-user.interface';
-import { Entry } from '../models/entry.interface';
+import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import { Entry } from '../interfaces/entry.interface';
+import DocumentResponse from '../classes/document-response.class';
 
 export default class FirestoreAPI {
 
@@ -25,7 +26,13 @@ export default class FirestoreAPI {
             });
     }
 
-    public createNewEntry(entry: Entry): Promise<void> {
-        return database.collection('entries').doc().set(entry);
+    public async createNewEntry(entry: Entry): Promise<DocumentResponse> {
+        return database.collection('entries').doc().set(entry)
+            .then(() => {
+                return new DocumentResponse(true);
+            })
+            .catch((error) => {
+                return new DocumentResponse(false, error);
+            });
     }
 }
