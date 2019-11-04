@@ -118,7 +118,7 @@
                 </b-row>
                 <b-row>
                     <b-col>Identifier:</b-col>
-                    <b-col>{{ entryForm.identifier }}</b-col>
+                    <b-col>{{ entryForm.entryIdentifier }}</b-col>
                 </b-row>
                 <b-row>
                     <b-col>Nationality:</b-col>
