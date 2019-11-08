@@ -1,5 +1,6 @@
 import { database } from '@/main';
 import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import { globalStore } from '@/store';
 
 export default class FirestoreAPI {
 
@@ -18,6 +19,9 @@ export default class FirestoreAPI {
 
     public async updateUserProfile(id: string, document: any): Promise<void> {
         return database.collection('users').doc(id).update(document)
+            .then(() => {
+                globalStore.eventBus.displaySuccessAlert();
+            })
             .catch((error) => {
                 // The document probably doesn't exist.
                 console.error('Error updating document: ', error);

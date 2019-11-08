@@ -2,6 +2,7 @@ import { mutation, action, createModule } from 'vuex-class-component';
 import { User } from 'firebase/app';
 import authService from '@/infrastructure/services/authentication.service';
 import FirestoreService from '@/infrastructure/services/firestore.service';
+import { UserProfile, NullUserProfile } from '@/infrastructure/models/user-profile';
 
 const fireStoreService = new FirestoreService();
 
@@ -12,18 +13,18 @@ const VuexModule = createModule({
 
 export class UserStore extends VuexModule {
     private authUser: User = null;
-    private userProfile: any = {};
+    private userProfile: UserProfile = new NullUserProfile();
 
     public get isLoggedIn(): boolean {
         return this.authUser !== null ? true : false;
     }
 
     public get firstName(): string {
-        return this.userProfile ? this.userProfile.firstName : 'n/a';
+        return this.userProfile.firstName;
     }
 
     public get lastName(): string {
-        return this.userProfile ? this.userProfile.lastName : 'n/a';
+        return this.userProfile.lastName;
     }
 
     public get uid(): string {
@@ -34,7 +35,7 @@ export class UserStore extends VuexModule {
         return this.authUser !== null ? this.authUser.email : '';
     }
 
-    public get profile(): any {
+    public get profile(): UserProfile {
         return this.userProfile;
     }
 
@@ -44,13 +45,13 @@ export class UserStore extends VuexModule {
     }
 
     @mutation
-    public updateUserProfile(profile: any): void {
+    public updateUserProfile(profile: UserProfile): void {
         this.userProfile = profile;
     }
 
     @mutation
     public clearUserProfile(): void {
-        this.userProfile = {};
+        this.userProfile = new NullUserProfile();
     }
 
     // Fetch both the auth state of the user and the Firestore document.
