@@ -1,15 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { userStore, UserStore } from './modules/user.vuex';
+import { UserStore } from './modules/user.vuex';
+import { extractVuexModule, createProxy } from 'vuex-class-component';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     modules: {
-        userStore
+        ...extractVuexModule(UserStore)
     }
 });
 
 export const globalStore = {
-    user: UserStore.CreateProxy( store, UserStore ) as UserStore
+    user: createProxy(store, UserStore)
 };
