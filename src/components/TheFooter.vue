@@ -1,13 +1,13 @@
+<template>
+    <div id="TheFooter">&copy; {{ currentYear }} NEO Endurance - Developed by Niel Hekkens</div>
+</template>
+
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class TheFooter extends Vue {
-    public currentYear: string;
-
-    public constructor() {
-        super();
-        this.currentYear = '2019';
-    }
+    public currentYear: string = '2019';
 
     public mounted(): void {
         this.getCurrentYear();
@@ -20,3 +20,4 @@ export default class TheFooter extends Vue {
         this.currentYear = year.toString();
     }
 }
+</script>
