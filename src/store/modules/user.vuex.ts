@@ -1,11 +1,15 @@
-import { VuexModule, mutation, action, getter, Module } from 'vuex-class-component';
+import { mutation, action, createModule } from 'vuex-class-component';
 import { User } from 'firebase/app';
 import authService from '@/infrastructure/services/authentication.service';
 import FirestoreService from '@/infrastructure/services/firestore.service';
 
 const fireStoreService = new FirestoreService();
 
-@Module()
+const VuexModule = createModule({
+    namespaced: true,
+    strict: false,
+});
+
 export class UserStore extends VuexModule {
     private authUser: User = null;
     private userProfile: any = {};
@@ -78,5 +82,3 @@ export class UserStore extends VuexModule {
         return await fireStoreService.retrieveUser(id);
     }
 }
-
-export const userStore = UserStore.ExtractVuexModule(UserStore);

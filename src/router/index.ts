@@ -4,11 +4,11 @@ import firebase from 'firebase/app';
 import NotFoundView from '@/views/errors/NotFoundView.vue';
 import NoAccessView from '@/views/errors/NoAccessView.vue';
 import LoginView from '@/views/login/LoginView.vue';
-import RegisterView from '@/views/register/RegisterView';
-import DashboardView from '@/views/dashboard/DashboardView';
-import LandingView from '@/views/landing/LandingView';
-import ResetPasswordView from '@/views/reset-password/ResetPasswordView';
-import ProfileView from '@/views/profile/ProfileView';
+import RegisterView from '@/views/register/RegisterView.vue';
+import DashboardView from '@/views/dashboard/DashboardView.vue';
+import LandingView from '@/views/landing/LandingView.vue';
+import ResetPasswordView from '@/views/reset-password/ResetPasswordView.vue';
+import ProfileView from '@/views/profile/ProfileView.vue';
 
 Vue.use(Router);
 
