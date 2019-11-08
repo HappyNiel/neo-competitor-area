@@ -1,10 +1,10 @@
 import { database } from '@/main';
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
 import { globalStore } from '@/store';
+import RegisteredUser from "../models/registered-user";
 
 export default class FirestoreAPI {
 
-    public createNewUser(id: string, teamManager: NewUser): Promise<void> {
+    public createNewUser(id: string, teamManager: RegisteredUser): Promise<void> {
         return database.collection('users').doc(id).set({
             firstName: teamManager.firstName,
             lastName: teamManager.lastName
