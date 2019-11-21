@@ -1,7 +1,8 @@
 <template>
     <div class="AlertsContainer">
         <b-alert
-            :show="eventBus.isSuccess">
+            :show="eventBus.isSuccess"
+            dismissible>
             Success!
         </b-alert>
     </div>
