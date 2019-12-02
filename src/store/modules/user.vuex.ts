@@ -7,7 +7,7 @@ import { UserProfile, NullUserProfile } from '@/infrastructure/models/user-profi
 const fireStoreService = new FirestoreService();
 
 const VuexModule = createModule({
-    namespaced: true,
+    namespaced: 'true',
     strict: false,
 });
 
