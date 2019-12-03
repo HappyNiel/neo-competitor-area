@@ -23,7 +23,9 @@ export default class FirestoreAPI {
                 EventBus.$emit('UserProfileUpdateSuccess');
             })
             .catch((error) => {
-                // The document probably doesn't exist.
+                EventBus.$emit('UserProfileUpdateFailure');
+
+                //TODO: log the error somewhere, if possible? Then I don't have to put the error in the console.
                 console.error('Error updating document: ', error);
             });
     }
