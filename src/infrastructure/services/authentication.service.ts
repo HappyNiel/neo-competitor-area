@@ -1,7 +1,7 @@
 import firebase, { User } from 'firebase/app';
 import FirestoreService from './firestore.service';
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
 import RoutingService from '@/router/routing.service';
+import RegisteredUser from '../models/registered-user';
 
 class AuthService {
     private firestoreService: FirestoreService;
@@ -14,7 +14,7 @@ class AuthService {
     // TODO: Unit test this file
 
     // Register user
-    public async registerNewUser(teamManager: NewUser, password: string): Promise<void> {
+    public async registerNewUser(teamManager: RegisteredUser, password: string): Promise<void> {
         return firebase.auth().createUserWithEmailAndPassword(teamManager.email, password)
             .then((userCredential: firebase.auth.UserCredential) => {
                 const userId = userCredential.user.uid;

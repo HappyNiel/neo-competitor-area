@@ -21,7 +21,8 @@
 		"interface-name": false,
 		"ordered-imports": false,
 		"object-literal-sort-keys": false,
-		"quotemark": [true, "single", "backtick", "avoid-escape"],
+        "quotemark": [true, "single", "backtick", "avoid-escape"],
+        "max-classes-per-file": false,
 		"no-consecutive-blank-lines": false,
 		"trailing-comma": false,
 		"no-console": [
@@ -38,8 +39,7 @@
 			"check-whitespace"
 		],
 		"variable-name": [
-			true,
-			"check-format",
+			false,
 			"allow-leading-underscore"
 		]
 	}

@@ -1,11 +1,11 @@
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
 import FirestoreAPI from '../api/firestore.api';
+import RegisteredUser from '../models/registered-user';
 
 export default class FirestoreService {
 
     private firestore = new FirestoreAPI();
 
-    public createNewUser(id: string, teamManager: NewUser): Promise<void> {
+    public createNewUser(id: string, teamManager: RegisteredUser): Promise<void> {
         return this.firestore.createNewUser(id, teamManager);
     }
 

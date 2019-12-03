@@ -1,8 +1,8 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { globalStore } from '@/store';
-import { UserProfile } from '@/infrastructure/interfaces/user-profile.interface';
 import FirestoreAPI from '@/infrastructure/api/firestore.api';
 import authService from '@/infrastructure/services/authentication.service';
+import { UserProfile } from '@/infrastructure/models/user-profile';
 
 @Component
 export default class ProfileView extends Vue {

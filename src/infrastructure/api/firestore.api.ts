@@ -1,9 +1,10 @@
 import { database } from '@/main';
-import NewUser from '@/infrastructure/interfaces/new-user.interface';
+import RegisteredUser from '../models/registered-user';
+import EventBus from '../event-bus';
 
 export default class FirestoreAPI {
 
-    public createNewUser(id: string, teamManager: NewUser): Promise<void> {
+    public createNewUser(id: string, teamManager: RegisteredUser): Promise<void> {
         return database.collection('users').doc(id).set({
             firstName: teamManager.firstName,
             lastName: teamManager.lastName
@@ -18,8 +19,13 @@ export default class FirestoreAPI {
 
     public async updateUserProfile(id: string, document: any): Promise<void> {
         return database.collection('users').doc(id).update(document)
+            .then(() => {
+                EventBus.$emit('UserProfileUpdateSuccess');
+            })
             .catch((error) => {
-                // The document probably doesn't exist.
+                EventBus.$emit('UserProfileUpdateFailure');
+
+                //TODO: log the error somewhere, if possible? Then I don't have to put the error in the console.
                 console.error('Error updating document: ', error);
             });
     }
