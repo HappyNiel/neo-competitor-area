@@ -25,7 +25,7 @@ export default class FirestoreAPI {
             .catch((error) => {
                 EventBus.$emit('UserProfileUpdateFailure');
 
-                //TODO: log the error somewhere, if possible? Then I don't have to put the error in the console.
+                // TODO: log the error somewhere, if possible? Then I don't have to put the error in the console.
                 console.error('Error updating document: ', error);
             });
     }
