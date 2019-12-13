@@ -17,7 +17,8 @@
 		"interface-name": false,
 		"ordered-imports": false,
 		"object-literal-sort-keys": false,
-        "no-consecutive-blank-lines": false,
+        "max-classes-per-file": false,
+		"no-consecutive-blank-lines": false,
 		"no-console": [
             true,
 			"debug",
@@ -39,8 +40,7 @@
 		],
         "trailing-comma": false,
 		"variable-name": [
-			true,
-			"check-format",
+			false,
 			"allow-leading-underscore"
 		]
 	}

@@ -30,19 +30,5 @@ const initializeApp = () => {
 firebase.auth().onAuthStateChanged(() => {
     // Update the user in the store whenever the Auth state changes.
     globalStore.user.fetchAllUserInfo();
-
-    // const firestoreService = new FirestoreService();
-    // setTimeout(() => {
-    //     firestoreService.retrieveUser(userState.uid);
-    // }, 2000);
-
     initializeApp();
-    // database.collection('testing')
-    //     .doc('o9w3dc8MIwUiDnrXmxPL')
-    //     .get()
-    //     .then(snapshot => {
-    //         const document = snapshot.data()
-    //         console.log(document);
-    //     }
-    // );
 });
