@@ -1,6 +1,6 @@
 <template>
-    <div id="TeamCreator">
-        <h1>Create an entry</h1>
+    <div id="EntryCreatorComponent">
+        <h2>Create a new entry</h2>
         <b-card>
             <b-form>
                 <b-card
@@ -150,4 +150,4 @@
     </div>
 </template>
 
-<script lang="ts" src="./team-creator.ts"></script>
+<script lang="ts" src="./entry-creator.ts"></script>

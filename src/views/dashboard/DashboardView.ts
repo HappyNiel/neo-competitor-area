@@ -1,9 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator';
-import TeamCreator from '@/components/team-creator/team-creator';
+import EntryCreator from '@/components/entry-creator/entry-creator.vue';
 
 @Component({
     components: {
-        TeamCreator
+        EntryCreator
     }
 })
 export default class DashboardView extends Vue {}

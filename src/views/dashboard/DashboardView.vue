@@ -3,7 +3,7 @@
         <b-container>
             <h1>Dashboard</h1>
             <p>Dashboard will come here</p>
-            <TeamCreator></TeamCreator>
+            <EntryCreator></EntryCreator>
         </b-container>
 	</div>
 </template>

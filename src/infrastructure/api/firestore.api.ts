@@ -1,8 +1,7 @@
 import { database } from '@/main';
 import RegisteredUser from '../models/registered-user';
 import EventBus from '../event-bus';
-import { Entry } from '../interfaces/entry.interface';
-import DocumentResponse from '../classes/document-response.class';
+import { EntryRegistrationForm } from '../models/entry-registration-form';
 
 export default class FirestoreAPI {
 
@@ -32,13 +31,13 @@ export default class FirestoreAPI {
             });
     }
 
-    public async createNewEntry(entry: Entry): Promise<DocumentResponse> {
-        return database.collection('entries').doc().set(entry)
+    public async createNewEntry(entry: EntryRegistrationForm): Promise<void> {
+        return database.collection('entries').doc().set(entry.convertToObject())
             .then(() => {
-                return new DocumentResponse(true);
+                EventBus.$emit('EntryCreatedSuccess');
             })
             .catch((error) => {
-                return new DocumentResponse(false, error);
+                console.error('Error updating document: ', error);
             });
     }
 }
