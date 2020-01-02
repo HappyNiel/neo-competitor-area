@@ -10,10 +10,6 @@
 	},
 	"rules": {
 		"eofline": true,
-		"semicolon": [
-			true, 
-			"always"
-		],
 		"indent": [
 			true,
 			"spaces"
@@ -21,23 +17,28 @@
 		"interface-name": false,
 		"ordered-imports": false,
 		"object-literal-sort-keys": false,
-        "quotemark": [true, "single", "backtick", "avoid-escape"],
         "max-classes-per-file": false,
 		"no-consecutive-blank-lines": false,
-		"trailing-comma": false,
 		"no-console": [
-			true,
+            true,
 			"debug",
 			"info",
 			"time",
 			"timeEnd",
 			"trace"
-		],
+        ],
+        "no-empty": [true, "allow-empty-catch", "allow-empty-functions"],
 		"one-line": [
-			true,
+            true,
 			"check-open-brace",
 			"check-whitespace"
+        ],
+        "quotemark": [true, "single", "backtick", "avoid-escape"],
+        "semicolon": [
+            true, 
+			"always"
 		],
+        "trailing-comma": false,
 		"variable-name": [
 			false,
 			"allow-leading-underscore"

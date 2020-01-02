@@ -4,6 +4,5 @@ export class Driver {
         public lastName: string,
         public email: string,
         public id: number
-    ) {
-    }
+    ) {}
 }

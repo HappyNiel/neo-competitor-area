@@ -14,6 +14,4 @@ export default class RegisterView extends Vue {
         const registeredUser = new RegisteredUser(this.firstName, this.lastName, this.email);
         await authService.registerNewUser(registeredUser, this.password);
     }
-
-
 }

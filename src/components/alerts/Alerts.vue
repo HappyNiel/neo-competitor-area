@@ -29,6 +29,7 @@ export default class Alerts extends Vue {
 
     public mounted(): void {
         EventBus.$on('UserProfileUpdateSuccess', () => this.displaySuccessAlert());
+        EventBus.$on('EntryCreatedSuccess', () => this.displaySuccessAlert());
         EventBus.$on('UserProfileUpdateFailure', () => this.displayFailureAlert());
     }
 
