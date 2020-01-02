@@ -53,7 +53,7 @@
                         label-for="EntryCarNumber">
                         <b-form-input
                             id="EntryCarNumber"
-                            type="number"
+                            type="text"
                             v-model="entryForm.carNumber"
                             min="1"
                             max="999"
@@ -103,7 +103,7 @@
             </b-form>
         </b-card>
 
-        <b-modal 
+        <b-modal
             id="EntryFormConfirmation"
             title="Confirm entry"
             size="lg"

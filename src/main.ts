@@ -5,7 +5,7 @@ import router from './router';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { firebaseKey } from './firebase';
+import { firebaseKey } from '@/firebase';
 import { firestorePlugin } from 'vuefire';
 import BootstrapVue from 'bootstrap-vue';
 
