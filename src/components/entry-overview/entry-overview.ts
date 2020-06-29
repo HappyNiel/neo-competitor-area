@@ -1,6 +1,6 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class TeamOverview extends Vue {
+export default class EntryOverview extends Vue {
 
 }
